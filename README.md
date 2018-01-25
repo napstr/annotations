@@ -11,7 +11,7 @@ A bunch of handy annotations on top of Spotbugs annotations
     }
 
     dependencies {
-        compile group: 'space.npstr.annotations', name: 'annotations', version: '0.0.1'
+        compile group: 'space.npstr', name: 'annotations', version: '0.0.1'
     }
 
 ```
@@ -26,7 +26,7 @@ A bunch of handy annotations on top of Spotbugs annotations
     </repositories>
 
     <dependency>
-        <groupId>space.npstr.annotations</groupId>
+        <groupId>space.npstr</groupId>
         <artifactId>annotations</artifactId>
         <version>0.0.1</version>
     </dependency>
