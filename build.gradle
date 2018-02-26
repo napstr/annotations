@@ -2,11 +2,11 @@ import com.github.spotbugs.SpotBugsTask
 import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
 
 plugins {
-    id 'com.github.spotbugs' version '1.6.0'
+    id 'com.github.spotbugs' version '1.6.1'
 }
 
 group 'space.npstr.annotations'
-version '0.0.1'
+version '0.0.2'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: '3.1.1' //annotations
+    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: '3.1.2' //annotations
 }
 
 compileJava.dependsOn clean
@@ -64,7 +64,7 @@ task sourceJar(type: Jar) {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.4.1'
+    gradleVersion = '4.5.1'
     distributionType = DistributionType.ALL
 }
 

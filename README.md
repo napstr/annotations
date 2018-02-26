@@ -11,7 +11,7 @@ A bunch of handy annotations on top of Spotbugs annotations
     }
 
     dependencies {
-        compile group: 'space.npstr', name: 'annotations', version: '0.0.1'
+        compile group: 'space.npstr', name: 'annotations', version: '0.0.2'
     }
 
 ```
@@ -28,11 +28,14 @@ A bunch of handy annotations on top of Spotbugs annotations
     <dependency>
         <groupId>space.npstr</groupId>
         <artifactId>annotations</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </dependency>
 ```
 
 ## Changelog
+
+### v0.0.2
+- Add copypasta of `@CheckReturnValue` annotation to avoid javax namespace pollution in java 9
 
 ### v0.0.1
 - package/class/method level annotations: `@FieldsAreNonNullByDefault`, `@ParametersAreNonnullByDefault,` `@ReturnTypesAreNonNullByDefault`
