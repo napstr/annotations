@@ -1,17 +1,11 @@
-import com.github.spotbugs.SpotBugsTask
 import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
 
-plugins {
-    id 'com.github.spotbugs' version '1.6.1'
-}
-
 group 'space.npstr.annotations'
-version '0.0.2'
+version '0.0.3'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
-apply plugin: 'com.github.spotbugs'
 
 sourceCompatibility = 8
 targetCompatibility = 8
@@ -40,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: '3.1.2' //annotations
+    compileOnly group: 'org.checkerframework', name: 'checker-qual',  version: '2.5.4' //annotations
 }
 
 compileJava.dependsOn clean
@@ -48,7 +42,6 @@ compileJava.options.encoding = 'UTF-8'
 compileJava.options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
 
 jar.mustRunAfter clean
-jar.dependsOn spotbugsMain
 
 publishToMavenLocal.dependsOn jar
 
@@ -66,12 +59,4 @@ task sourceJar(type: Jar) {
 task wrapper(type: Wrapper) {
     gradleVersion = '4.5.1'
     distributionType = DistributionType.ALL
-}
-
-// To generate an HTML report instead of XML
-tasks.withType(SpotBugsTask) {
-    reports {
-        xml.enabled = false
-        html.enabled = true
-    }
 }

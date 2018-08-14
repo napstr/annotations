@@ -1,19 +1,15 @@
 package space.npstr.annotations;
 
-import javax.annotation.Nonnull;
-import javax.annotation.meta.TypeQualifierDefault;
-import java.lang.annotation.ElementType;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.framework.qual.DefaultQualifier;
+import org.checkerframework.framework.qual.TypeUseLocation;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 
 /**
  * Created by napster on 19.01.18.
- * <p>
- * https://stackoverflow.com/a/11807961/
  */
-@Nonnull
-@TypeQualifierDefault(ElementType.METHOD)
+@DefaultQualifier(value = NonNull.class, locations = TypeUseLocation.RETURN)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ReturnTypesAreNonNullByDefault {
-}
+public @interface ReturnTypesAreNonNullByDefault {}

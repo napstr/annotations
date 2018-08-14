@@ -1,5 +1,5 @@
 # Annotations
-A bunch of handy annotations on top of Spotbugs annotations
+A bunch of handy annotations on top of Checker Framework nullability annotations
 
 
 ## How to get these
@@ -11,7 +11,7 @@ A bunch of handy annotations on top of Spotbugs annotations
     }
 
     dependencies {
-        compile group: 'space.npstr', name: 'annotations', version: '0.0.2'
+        compile group: 'space.npstr', name: 'annotations', version: '0.0.3'
     }
 
 ```
@@ -28,11 +28,14 @@ A bunch of handy annotations on top of Spotbugs annotations
     <dependency>
         <groupId>space.npstr</groupId>
         <artifactId>annotations</artifactId>
-        <version>0.0.2</version>
+        <version>0.0.3</version>
     </dependency>
 ```
 
 ## Changelog
+
+### v0.0.3
+- Revert v0.0.2 changes, replace Spotbugs with Checker Framework because Spotbugs still uses jsr305 under the hood
 
 ### v0.0.2
 - Add copypasta of `@CheckReturnValue` annotation to avoid javax namespace pollution in java 9
